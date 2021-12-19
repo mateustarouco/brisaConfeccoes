@@ -1,0 +1,130 @@
+@import "src/styles";
+
+.menu {
+  width: 60px;
+  padding: 15px 0 0 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  ul {
+    display: none;
+  }
+
+  .toggle {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4px;
+    max-width: 55px;
+    transition: .5s;
+
+    span {
+      width: 45px;
+      height: 4px;
+      border-radius: 5px;
+      background: $primary;
+      margin: 4px 0;
+      transition: .5s;
+    }
+
+    span:nth-child(3) {
+      width: 20px;
+    }
+  }
+
+  .active {
+    span:nth-child(1) {
+      width: 30px;
+      transform: translateY(12px) rotate(45deg);
+      background: #ffffff;
+    }
+
+    span:nth-child(2) {
+      background: #ffffff;
+      transform: translateX(50px);
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      background: #ffffff;
+      transform: translateY(-12px) rotate(-225deg);
+      width: 30px !important;
+    }
+  }
+}
+
+.open {
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 6px solid #ffffff;
+  background: $primary;
+  width: 300px!important;
+  height: 100vh;
+  padding: 0;
+  .toggle {
+    transform: translateX(245px);
+  }
+
+  ul {
+    position: relative;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    li {
+      width: 100%;
+      padding: 5px 0 5px 25px;
+      margin: 2px 0;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      position: relative;
+
+      a {
+        font-weight: 500;
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: #ffffff;
+      }
+    }
+
+
+  }
+}
+li:hover ::after{
+  top: -20px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 6px 6px 0 #ffffff;
+  right:0;
+  position: absolute;
+  content: '';
+
+  width: 20px;
+  height: 20px;
+  background: transparent;
+}
+
+li:hover ::before{
+  z-index: 5;
+  bottom: -20px;
+  border-top-right-radius: 50px;
+  box-shadow: 6px -6px 0 #ffffff;
+  right:0;
+  position: absolute;
+  content: '';
+
+  width: 20px;
+  height: 20px;
+  background: transparent;
+}
+li:hover {
+  background: #ffffff!important;
+  transform: translateX(0px);
+
+  a{
+  color: $primary!important;
+  }
+}
