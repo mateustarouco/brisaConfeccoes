@@ -14,9 +14,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 @NgModule({
   declarations: [
     PageComponent,
-    MenuComponent,
     CamisetasComponent,
-    ProductComponent,
+    ProductComponent
   ],
     imports: [
         CommonModule,
@@ -24,7 +23,6 @@ import {MatFormFieldModule} from "@angular/material/form-field";
         MatRadioModule,
         ReactiveFormsModule,
         MatFormFieldModule,
-
     ]
 })
 export class PageModule { }

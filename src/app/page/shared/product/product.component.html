@@ -1,21 +1,33 @@
+<div class="product tilt" data-tilt-reverse="false">
+  <div class="bg"></div>
 
-<div class="product tilt"  data-tilt-reverse="false">
   <h3>Product Name</h3>
   <div class="t-shirt">
     <div class="estampa">
       <img src="../../../../assets/img/products/yoda.png" alt="">
     </div>
-<!--    <img src="assets/img/products/tshirt/{{tshitColor}}.png" alt="">-->
-    <img *ngIf="myGroup.getRawValue().white" src="assets/img/products/tshirt/white.png" alt="">
-    <img *ngIf="myGroup.getRawValue().black" src="assets/img/products/tshirt/black.png" alt="">
-    <img *ngIf="myGroup.getRawValue().red" src="assets/img/products/tshirt/red.png" alt="">
+      <img class="{{colorGroup.getRawValue().white ? 'show':'hide'}} " src="assets/img/products/tshirt/white.png" alt="">
+      <img class="{{colorGroup.getRawValue().black ? 'show':'hide'}}" src="assets/img/products/tshirt/black.png" alt="">
+      <img class="{{colorGroup.getRawValue().red ? 'show':'hide'}}" src="assets/img/products/tshirt/red.png" alt="">
+
+    <div class="colors" [formGroup]="colorGroup">
+
+      <label id="white">
+        <input type="checkbox" (click)="white()" formControlName="white">
+        <span></span>
+      </label>
+      <label id="black">
+        <input type="checkbox" (click)="black()" formControlName="black">
+        <span></span>
+      </label>
+      <label id="red">
+        <input type="checkbox" (click)="red()" formControlName="red">
+        <span></span>
+      </label>
+
+    </div>
+
   </div>
   <p>R$:50,00</p>
-  <button mat-raised-button (click)="button()" > add to cart</button>
-<!--    <mat-radio-group class="colors" [formGroup]="myGroup">-->
-<!--      <input type="checkbox"  formControlName="white">-->
-<!--      <input type="checkbox"  formControlName="black">-->
-<!--      <input type="checkbox"  formControlName="red">-->
-<!--    </mat-radio-group>-->
-
+  <button mat-raised-button (click)="button()"> Adicionar ao Carrinho</button>
 </div>

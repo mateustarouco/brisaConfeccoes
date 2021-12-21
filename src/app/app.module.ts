@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    // MenuComponent
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   providers: [],
   exports: [
-    // MenuComponent
+     // MenuComponent
   ],
   bootstrap: [AppComponent]
 })

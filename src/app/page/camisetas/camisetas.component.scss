@@ -1,3 +1,5 @@
+@import "src/styles";
+
 .container{
   max-width: 90vw;
   position: relative;
@@ -6,4 +8,12 @@
     .product{
       }
   }
+}
+.background{
+  position: fixed;
+  z-index: -50;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $light;
 }

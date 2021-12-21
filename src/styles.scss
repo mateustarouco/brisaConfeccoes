@@ -34,4 +34,5 @@ $brisaConfeccoes-theme: mat.define-light-theme((
 @include mat.all-component-themes($brisaConfeccoes-theme);
 
 $primary: #ef711f;
-$primary-alternative: #f57b2c
+$primary-alternative: #f57b2c;
+$light:#eaeaea;
