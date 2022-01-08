@@ -8,6 +8,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatRadioModule} from "@angular/material/radio";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -15,7 +16,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
   declarations: [
     PageComponent,
     CamisetasComponent,
-    ProductComponent
+    ProductComponent,
+    HomeComponent
   ],
     imports: [
         CommonModule,

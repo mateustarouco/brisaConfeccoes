@@ -1,0 +1,222 @@
+@import "src/styles";
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+
+  height: 100vh;
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+
+    .box {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 30px;
+      transition: .5s;
+
+      span {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        z-index: 50;
+      }
+      span:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        opacity: 0;
+        transition: .5s;
+        animation: animation 2s ease-in-out infinite;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      span:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        opacity: 0;
+        transition: .5s;
+        animation: animation 2s ease-in-out infinite;
+        animation-delay: .5s ;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    .box:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50px;
+      width: 50%;
+      height: 100%;
+      border-radius: 8px;
+      transform: skewX(15deg);
+      transition: .5s;
+    }
+
+    .box:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50px;
+      width: 50%;
+      height: 100%;
+      border-radius: 8px;
+      transform: skewX(15deg);
+      transition: .5s;
+      filter: blur(30px);
+    }
+
+    .box:hover:before,
+    .box:hover:after {
+      transform: skewX(0deg);
+      left: 45px;
+      width: calc(100% - 90px);
+    }
+
+    .box:before,
+    .box:after {
+      background: linear-gradient(315deg, #ff1696, #ff7716);
+
+    }
+
+    .box:hover {
+      span:before {
+        top: -50px;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+        opacity: 1 !important;
+        transition: .5s;
+      }
+
+      span:after {
+        bottom: -50px;
+        right: 50px;
+        width: 100px;
+        height: 100px;
+        opacity: 1 !important;
+        transition: .5s;
+      }
+    }
+
+    .content {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      box-shadow: 0 5px 5px rgba(0,0,0,0.05);
+      backdrop-filter: blur(10px);
+      padding: 20px 40px;
+      width: 100%;
+      height: 90%;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h2{
+        color: $primary;
+      }
+      .input{
+        width: 100%;
+        padding: 0 10%;
+      }
+      .bnt {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        padding: 0;
+        button {
+          background: $primary;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.background{
+  background: linear-gradient(315deg, #020611, #070d1a);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes animation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+input{
+  color: #ffffff!important;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  padding:2px;
+  -webkit-text-fill-color: $primary;
+  -webkit-box-shadow: 0 0 0 1000px rgba(215, 215, 215, 1)  inset;
+  backdrop-filter: blur(50px);
+  border-radius: 5px;
+}
+input:focus {
+  background: 0 0 !important;
+  color: #fff;
+}
+::ng-deep .mat-focused .mat-form-field-label {
+  color: #FFFFFF !important;
+}
+::ng-deep .mat-form-field-underline {
+  background-color: $primary !important;
+}
+::ng-deep .mat-form-field-ripple {
+  background-color: $primary !important;
+}
+::ng-deep .mat-form-field-label {
+  color: rgba(255, 255, 255, 0.38) !important;
+}
+.error {
+  color: #fff;
+}
+.advise {
+  color: #9c9c9c;
+}
+.cursor {
+  cursor: pointer;
+}
+.cursor:hover {
+  color: $primary;
+}
+::ng-deep .mat-card-title {
+  font-size: 1.3rem;
+  font-weight: 500 !important;
+}
+

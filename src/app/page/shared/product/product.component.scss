@@ -40,7 +40,8 @@
     background: $primary;
     transform: translateY(4px);
     transition: .5s;
-    border-radius: 50px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
   }
 
   .t-shirt{
@@ -49,6 +50,7 @@
     transform: translate3d(0px , 0px, 30px);
     transform-style: preserve-3d;
     .estampa{
+      z-index: 2!important;
       position: absolute;
       #adjust{
         position: absolute;
@@ -91,6 +93,7 @@
   button{
     transform: translateY(-5px);
     transition: .5s;
+    border-radius: 25px;
   }
   .bg{
     transition: .5s;
@@ -155,12 +158,28 @@ label{
 
 .show{
   display: block;
-  transition: .5s;
+  animation: animation .5s ease;
 }
 .hide{
   display: none;
   transition: .5s;
-}
-img{
+  animation: animation .3s reverse;
 
+}
+
+@keyframes animation {
+  0%{
+    transform: translateX(50px) ;
+  }
+  100%{
+    transform: translateX(0px) ;
+  }
+}
+@keyframes animationOp {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
